@@ -8,6 +8,7 @@ export default [
       { text: '杂七杂八', link: '/fixbug/pieces' },
       { text: 'cesium', link: '/fixbug/cesium' },
       { text: 'node', link: '/fixbug/node' },
+      { text: 'element-plus', link: '/fixbug/element' },
     ],
   },
 ]

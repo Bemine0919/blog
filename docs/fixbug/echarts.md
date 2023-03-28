@@ -80,3 +80,78 @@ series: [
   }
 ]
 ```
+
+## 饼图外侧包裹一层饼图，双层饼
+```js
+const options = {
+  grid: {
+    ...
+  },
+  tooltip: {
+    ...
+  },
+  series: {
+      {
+        type: 'pie',
+        radius: ['30%', '50%'],
+        avoidLabelOverlap: false,
+        itemStyle: {
+          borderColor: '#000F2E',
+          borderWidth: 1
+        },
+        emphasis: {
+          label: {
+            show: true,
+            fontSize: 18,
+            fontWeight: 'bold'
+          }
+        },
+        label: {
+          fontSize: 16,
+          color: '#fff',
+          formatter: '{b}：{c}'
+        },
+        labelLine: {
+          show: true,
+          showAbove: true,
+          length: 36
+        },
+        data: [
+          {
+            name: 'asdas',
+            value: 11
+          },
+          {
+            name: 'asdas',
+            value: 11
+          },
+          {
+            name: 'asdas',
+            value: 11
+          },
+          {
+            name: 'asdas',
+            value: 11
+          },
+        ]
+      }, //内环
+      {
+        type: 'pie',
+        radius: ['50%', '60%'],  // 外层圆的内圈半径和外圈半径
+        // center: ['20%', '50%'],
+        hoverAnimation: false,
+        tooltip: {
+          show: false
+        },
+        data: [
+          {
+            value: 30,  //外环想显示必须有value 多少无所谓
+            itemStyle: {
+              color: 'rgba(0,0,0,0)',  //透明背景色
+              borderColor: '#18274f'  // 圆圈边框颜色
+            }
+          }
+        ]
+      }, //外环
+  }
+}
